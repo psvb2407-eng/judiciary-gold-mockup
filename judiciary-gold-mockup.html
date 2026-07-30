@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Judiciary Gold — Crack Judiciary. The JG Way.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0F1B2D;
+    --ink-2:#16233A;
+    --ink-3:#1E2D46;
+    --parchment:#F1EDE1;
+    --parchment-2:#E8E1CE;
+    --line:#33425E;
+    --line-light:#D9D0B8;
+    --gold:#B8964F;
+    --gold-bright:#D9B876;
+    --maroon:#7A1F2B;
+    --maroon-bright:#9A2E3B;
+    --text-light:#EDE7D9;
+    --text-light-dim:#9AA5B8;
+    --text-dark:#1C1B18;
+    --text-dark-dim:#6B6357;
+    --display: 'Fraunces', serif;
+    --body: 'IBM Plex Sans', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--body);
+    background:var(--ink);
+    color:var(--text-light);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  :focus-visible{outline:2px solid var(--gold-bright);outline-offset:3px;}
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--gold-bright);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--gold-bright);display:inline-block;}
+
+  /* ---------- NAV ---------- */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(15,27,45,.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:18px;padding-bottom:18px;
+    flex-wrap:wrap;gap:14px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand-mark{
+    width:34px;height:34px;border-radius:50%;
+    border:1.5px solid var(--gold);
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--display);font-weight:600;font-size:14px;color:var(--gold-bright);
+    flex-shrink:0;
+  }
+  .brand-name{font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:.01em;}
+  .brand-sub{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--text-light-dim);text-transform:uppercase;display:block;margin-top:1px;}
+  .nav-links{display:flex;gap:30px;font-size:14px;color:var(--text-light-dim);}
+  .nav-links a:hover{color:var(--text-light);}
+  .btn{
+    font-family:var(--body);font-weight:600;font-size:14px;
+    padding:11px 22px;border-radius:3px;
+    display:inline-flex;align-items:center;gap:8px;
+    border:1px solid transparent;cursor:pointer;
+    transition:transform .15s ease, background .15s ease, border-color .15s ease;
+  }
+  .btn-gold{background:var(--gold);color:#1A1305;}
+  .btn-gold:hover{background:var(--gold-bright);transform:translateY(-1px);}
+  .btn-ghost{border-color:var(--line);color:var(--text-light);}
+  .btn-ghost:hover{border-color:var(--gold-bright);color:var(--gold-bright);}
+  .btn-sm{padding:9px 16px;font-size:13px;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:88px 0 100px;
+    background:
+      radial-gradient(ellipse at 15% 0%, rgba(184,150,79,.10), transparent 55%),
+      var(--ink);
+    border-bottom:1px solid var(--line);
+    position:relative;overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:start;
+  }
+  .hero h1{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:clamp(38px,5vw,60px);
+    line-height:1.06;
+    letter-spacing:-.01em;
+    margin:18px 0 22px;
+  }
+  .hero h1 em{font-style:italic;color:var(--gold-bright);font-weight:500;}
+  .hero p.lede{
+    font-size:17px;color:var(--text-light-dim);max-width:46ch;margin-bottom:34px;
+  }
+  .hero-cta{display:flex;gap:14px;align-items:center;flex-wrap:wrap;}
+  .hero-note{font-family:var(--mono);font-size:12px;color:var(--text-light-dim);margin-top:16px;}
+
+  /* seal */
+  .seal-wrap{position:relative;display:inline-block;margin-top:44px;}
+  .seal{
+    width:104px;height:104px;border-radius:50%;
+    border:2px solid var(--maroon-bright);
+    background:radial-gradient(circle at 40% 35%, rgba(154,46,59,.35), rgba(122,31,43,.12));
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;
+    transform:rotate(-9deg) scale(0);
+    opacity:0;
+    animation:stamp .7s cubic-bezier(.2,1.6,.4,1) .5s forwards;
+  }
+  .seal::before{
+    content:"";position:absolute;inset:6px;border-radius:50%;
+    border:1px dashed rgba(154,46,59,.55);
+  }
+  .seal .jg{font-family:var(--display);font-weight:700;font-size:22px;color:var(--maroon-bright);letter-spacing:.02em;}
+  .seal .cert{font-family:var(--mono);font-size:7px;letter-spacing:.14em;color:var(--maroon-bright);text-transform:uppercase;margin-top:2px;}
+  @keyframes stamp{
+    0%{transform:rotate(-9deg) scale(2.4);opacity:0;}
+    60%{opacity:1;}
+    100%{transform:rotate(-9deg) scale(1);opacity:1;}
+  }
+
+  /* cause list card */
+  .docket{
+    background:var(--parchment);
+    color:var(--text-dark);
+    border-radius:4px;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,.5);
+    overflow:hidden;
+    transform:rotate(1.2deg);
+  }
+  .docket-head{
+    padding:20px 24px 16px;
+    border-bottom:1px solid var(--line-light);
+  }
+  .docket-head .k{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--text-dark-dim);text-transform:uppercase;}
+  .docket-head h3{font-family:var(--display);font-size:19px;font-weight:600;margin-top:6px;}
+  .docket-rows{padding:6px 0;}
+  .docket-row{
+    display:grid;grid-template-columns:28px 1fr auto;gap:14px;
+    padding:13px 24px;border-bottom:1px solid var(--line-light);
+    align-items:center;
+  }
+  .docket-row:last-child{border-bottom:none;}
+  .docket-row .no{font-family:var(--mono);font-size:12px;color:var(--text-dark-dim);}
+  .docket-row .name{font-size:13.5px;font-weight:600;}
+  .docket-row .name span{display:block;font-weight:400;font-size:11.5px;color:var(--text-dark-dim);margin-top:1px;}
+  .docket-row .seats{font-family:var(--mono);font-size:11px;color:var(--maroon);text-align:right;white-space:nowrap;}
+  .docket-foot{
+    padding:14px 24px;background:var(--parchment-2);
+    font-family:var(--mono);font-size:10.5px;color:var(--text-dark-dim);
+    display:flex;justify-content:space-between;letter-spacing:.03em;
+  }
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:96px 0;}
+  .on-ink{background:var(--ink);}
+  .on-parchment{background:var(--parchment);color:var(--text-dark);}
+  .on-parchment .eyebrow{color:var(--maroon);}
+  .on-parchment .eyebrow::before{background:var(--maroon);}
+  .sec-head{max-width:640px;margin-bottom:56px;}
+  .sec-head h2{
+    font-family:var(--display);font-weight:600;
+    font-size:clamp(28px,3.4vw,38px);margin-top:14px;line-height:1.15;
+  }
+  .sec-head p{margin-top:14px;color:var(--text-light-dim);font-size:15.5px;}
+  .on-parchment .sec-head p{color:var(--text-dark-dim);}
+
+  /* evidence / stats */
+  .exhibits{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .exhibit{background:var(--ink);padding:32px 26px;}
+  .exhibit .tag{font-family:var(--mono);font-size:10px;color:var(--gold-bright);letter-spacing:.1em;}
+  .exhibit .num{font-family:var(--display);font-size:38px;font-weight:600;margin:10px 0 8px;}
+  .exhibit .lbl{font-size:13px;color:var(--text-light-dim);}
+
+  /* statutes / curriculum */
+  .statutes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .statute-card{
+    background:var(--ink-2);border:1px solid var(--line);border-radius:4px;
+    padding:26px 24px;transition:border-color .2s ease, transform .2s ease;
+  }
+  .statute-card:hover{border-color:var(--gold);transform:translateY(-3px);}
+  .statute-card .code{font-family:var(--mono);font-size:11px;color:var(--gold-bright);letter-spacing:.06em;}
+  .statute-card h4{font-family:var(--display);font-size:19px;font-weight:600;margin:12px 0 8px;}
+  .statute-card p{font-size:13.5px;color:var(--text-light-dim);}
+  .statute-card .meta{
+    margin-top:16px;padding-top:14px;border-top:1px solid var(--line);
+    font-family:var(--mono);font-size:11px;color:var(--text-light-dim);
+    display:flex;justify-content:space-between;
+  }
+
+  /* testimonials / witness statements */
+  .witnesses{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .witness{background:#fff;border:1px solid var(--line-light);border-radius:4px;padding:28px 26px;position:relative;}
+  .witness .mark{font-family:var(--display);font-size:44px;color:var(--maroon);opacity:.25;line-height:.4;margin-bottom:10px;display:block;}
+  .witness p.quote{font-size:14.5px;color:var(--text-dark);line-height:1.6;min-height:96px;}
+  .witness .who{margin-top:18px;padding-top:14px;border-top:1px solid var(--line-light);}
+  .witness .who .n{font-weight:700;font-size:13.5px;}
+  .witness .who .r{font-family:var(--mono);font-size:11px;color:var(--maroon);margin-top:2px;}
+
+  /* verdict / pricing */
+  .verdict{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .plan{border:1px solid var(--line);border-radius:4px;padding:32px 28px;background:var(--ink-2);}
+  .plan.featured{border-color:var(--gold);background:linear-gradient(180deg, rgba(184,150,79,.09), var(--ink-2) 40%);position:relative;}
+  .plan.featured::before{
+    content:"RECOMMENDED";position:absolute;top:-11px;left:28px;
+    background:var(--gold);color:#1A1305;font-family:var(--mono);font-size:10px;
+    letter-spacing:.1em;padding:4px 10px;border-radius:2px;font-weight:600;
+  }
+  .plan h4{font-family:var(--display);font-size:20px;font-weight:600;}
+  .plan .price{font-family:var(--display);font-size:32px;font-weight:600;margin:14px 0 4px;}
+  .plan .price sup{font-family:var(--mono);font-size:13px;font-weight:400;color:var(--text-light-dim);}
+  .plan .per{font-family:var(--mono);font-size:11px;color:var(--text-light-dim);margin-bottom:22px;display:block;}
+  .plan ul{margin-bottom:26px;}
+  .plan li{font-size:13.5px;color:var(--text-light-dim);padding:7px 0;border-top:1px solid var(--line);}
+  .plan li:first-child{border-top:none;}
+  .plan .btn{width:100%;justify-content:center;}
+
+  /* footer */
+  footer{background:var(--ink-2);border-top:1px solid var(--line);padding:56px 0 28px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+  .foot-grid h5{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-bright);margin-bottom:14px;}
+  .foot-grid p, .foot-grid li{font-size:13.5px;color:var(--text-light-dim);padding:4px 0;}
+  .foot-bottom{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-family:var(--mono);font-size:11px;color:var(--text-light-dim);}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .seal{animation:none;opacity:1;transform:rotate(-9deg) scale(1);}
+    .reveal{opacity:1;transform:none;transition:none;}
+  }
+
+  @media (max-width:980px){
+    .hero-grid{grid-template-columns:1fr;}
+    .docket{transform:none;max-width:460px;}
+    .exhibits{grid-template-columns:repeat(2,1fr);}
+    .statutes{grid-template-columns:repeat(2,1fr);}
+    .witnesses{grid-template-columns:1fr;}
+    .verdict{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr;}
+    .nav-links{order:3;width:100%;justify-content:center;padding-top:8px;border-top:1px solid var(--line);}
+  }
+  @media (max-width:560px){
+    .exhibits{grid-template-columns:1fr 1fr;}
+    section{padding:64px 0;}
+    .hero{padding:56px 0 64px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="wrap">
+    <div class="brand">
+      <div class="brand-mark">JG</div>
+      <div>
+        <span class="brand-name">Judiciary Gold</span>
+        <span class="brand-sub">by Toprankers</span>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#statutes">Curriculum</a></li>
+      <li><a href="#evidence">Results</a></li>
+      <li><a href="#witnesses">Selections</a></li>
+      <li><a href="#verdict">Enroll</a></li>
+    </ul>
+    <a href="#verdict" class="btn btn-gold btn-sm">Book a Free Class</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Civil Judge &amp; Judicial Services — India</span>
+      <h1>Crack Judiciary.<br>The <em>JG</em> Way.</h1>
+      <p class="lede">Structured live courses, mentor-led answer writing and full-length test series for state judicial services exams — built by educators and practicing officers who've sat where you're sitting.</p>
+      <div class="hero-cta">
+        <a href="#verdict" class="btn btn-gold">Book a Free Class</a>
+        <a href="#statutes" class="btn btn-ghost">See Curriculum</a>
+      </div>
+      <p class="hero-note">No card required · 6 offline centres · State-wise batches</p>
+      <div class="seal-wrap">
+        <div class="seal"><span class="jg">JG</span><span class="cert">Certified Prep</span></div>
+      </div>
+    </div>
+
+    <div class="docket">
+      <div class="docket-head">
+        <span class="k">Cause List · Today's Batches</span>
+        <h3>In the Court of Preparation</h3>
+      </div>
+      <div class="docket-rows">
+        <div class="docket-row">
+          <span class="no">01</span>
+          <span class="name">UP Judiciary (PCS-J)<span>Prelims + Mains combined</span></span>
+          <span class="seats">42 seats left</span>
+        </div>
+        <div class="docket-row">
+          <span class="no">02</span>
+          <span class="name">MP Civil Judge (MPJJ)<span>Mains intensive</span></span>
+          <span class="seats">18 seats left</span>
+        </div>
+        <div class="docket-row">
+          <span class="no">03</span>
+          <span class="name">Rajasthan Judiciary (RJS)<span>Foundation batch</span></span>
+          <span class="seats">Open</span>
+        </div>
+        <div class="docket-row">
+          <span class="no">04</span>
+          <span class="name">Delhi Judicial Services<span>Interview &amp; DAF review</span></span>
+          <span class="seats">Waitlist</span>
+        </div>
+      </div>
+      <div class="docket-foot">
+        <span>Listed before the Bench of Preparation</span>
+        <span>Updated daily</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="on-ink" id="evidence">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Section I — The Record Shows</span>
+      <h2>Evidence, not adjectives.</h2>
+      <p>A decade of coaching distilled into centres, mentors and a community that shows up every single day.</p>
+    </div>
+    <div class="exhibits reveal">
+      <div class="exhibit"><span class="tag">Exhibit A</span><div class="num">104K+</div><div class="lbl">Aspirants in the community</div></div>
+      <div class="exhibit"><span class="tag">Exhibit B</span><div class="num">06</div><div class="lbl">Offline centres — Delhi, Indore, Lucknow, Jaipur, Bhopal, Gurugram</div></div>
+      <div class="exhibit"><span class="tag">Exhibit C</span><div class="num">08</div><div class="lbl">State judiciary exams covered</div></div>
+      <div class="exhibit"><span class="tag">Exhibit D</span><div class="num">1:1</div><div class="lbl">Mentor-led answer evaluation</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="on-ink" id="statutes">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Section II — The Statutes</span>
+      <h2>Pick your state. Read the fine print later.</h2>
+      <p>Every judiciary exam has its own syllabus, cut-off and quirks. Batches are built state-first, not one-size-fits-all.</p>
+    </div>
+    <div class="statutes reveal">
+      <div class="statute-card">
+        <span class="code">§ UPJS</span>
+        <h4>UP Judiciary</h4>
+        <p>PCS-J prelims, mains and interview — with UP-specific local &amp; state law coverage.</p>
+        <div class="meta"><span>Live + Recorded</span><span>Hindi/English</span></div>
+      </div>
+      <div class="statute-card">
+        <span class="code">§ MPJJ</span>
+        <h4>MP Civil Judge</h4>
+        <p>Mains-focused answer writing with weekly evaluated tests and model answers.</p>
+        <div class="meta"><span>Live + Recorded</span><span>Hindi/English</span></div>
+      </div>
+      <div class="statute-card">
+        <span class="code">§ RJS</span>
+        <h4>Rajasthan Judiciary</h4>
+        <p>Foundation-to-mains track built around the RJS exam pattern and local acts.</p>
+        <div class="meta"><span>Live + Recorded</span><span>Hindi/English</span></div>
+      </div>
+      <div class="statute-card">
+        <span class="code">§ DJS</span>
+        <h4>Delhi Judicial Services</h4>
+        <p>DAF-based interview prep with mock boards conducted by retired officers.</p>
+        <div class="meta"><span>Interview-only</span><span>English</span></div>
+      </div>
+      <div class="statute-card">
+        <span class="code">§ BJS</span>
+        <h4>Bihar Judiciary</h4>
+        <p>Prelims-to-mains bridge course with a dedicated current affairs digest.</p>
+        <div class="meta"><span>Live + Recorded</span><span>Hindi/English</span></div>
+      </div>
+      <div class="statute-card">
+        <span class="code">§ HCS-J</span>
+        <h4>Haryana Judiciary</h4>
+        <p>Compact revision batch for repeaters — bare acts, not textbooks.</p>
+        <div class="meta"><span>Recorded</span><span>Hindi/English</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="on-parchment" id="witnesses">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Section III — Witness Statements</span>
+      <h2>In their own words.</h2>
+      <p>Illustrative statements written for this mockup — replace with verified selections and consent before publishing.</p>
+    </div>
+    <div class="witnesses reveal">
+      <div class="witness">
+        <span class="mark">"</span>
+        <p class="quote">The mains evaluation was the difference. Getting a mentor's red pen on every answer, every week, forced me to write like it was the real exam.</p>
+        <div class="who"><div class="n">A. Verma</div><div class="r">Selected — Civil Judge, UP</div></div>
+      </div>
+      <div class="witness">
+        <span class="mark">"</span>
+        <p class="quote">I'd failed prelims twice before joining. The state-wise current affairs digest closed the gap I didn't know I had.</p>
+        <div class="who"><div class="n">R. Sharma</div><div class="r">Selected — Civil Judge, MP</div></div>
+      </div>
+      <div class="witness">
+        <span class="mark">"</span>
+        <p class="quote">The mock interview board asked harder questions than my actual DAF interview. That's exactly why it worked.</p>
+        <div class="who"><div class="n">S. Iqbal</div><div class="r">Selected — Delhi Judicial Services</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="on-ink" id="verdict">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Section IV — The Verdict</span>
+      <h2>Choose the track that fits your prep.</h2>
+      <p>Every plan includes mentor access, evaluated tests and a structured revision calendar.</p>
+    </div>
+    <div class="verdict reveal">
+      <div class="plan">
+        <h4>Foundation</h4>
+        <div class="price">₹4,999<sup>/mo</sup></div>
+        <span class="per">Billed monthly</span>
+        <ul>
+          <li>Live foundation classes</li>
+          <li>Bare acts &amp; short notes</li>
+          <li>Weekly MCQ tests</li>
+        </ul>
+        <a href="#" class="btn btn-ghost">Start Foundation</a>
+      </div>
+      <div class="plan featured">
+        <h4>Mains Intensive</h4>
+        <div class="price">₹12,999<sup>/mo</sup></div>
+        <span class="per">Billed monthly</span>
+        <ul>
+          <li>Everything in Foundation</li>
+          <li>1:1 mentor-evaluated answer writing</li>
+          <li>State-wise current affairs digest</li>
+        </ul>
+        <a href="#" class="btn btn-gold">Start Mains Intensive</a>
+      </div>
+      <div class="plan">
+        <h4>Full Course</h4>
+        <div class="price">₹29,999<sup>/one-time</sup></div>
+        <span class="per">Prelims + Mains + Interview</span>
+        <ul>
+          <li>Everything in Mains Intensive</li>
+          <li>Mock interview boards</li>
+          <li>Offline centre access</li>
+        </ul>
+        <a href="#" class="btn btn-ghost">Start Full Course</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h5>Judiciary Gold</h5>
+        <p style="max-width:36ch">Judicial services coaching by Toprankers — live classes, mentor evaluation and test series for state civil judge exams.</p>
+      </div>
+      <div>
+        <h5>Centres</h5>
+        <ul>
+          <li>Delhi</li><li>Indore</li><li>Lucknow</li><li>Jaipur</li><li>Bhopal</li><li>Gurugram</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#statutes">Curriculum</a></li>
+          <li><a href="#evidence">Results</a></li>
+          <li><a href="#witnesses">Selections</a></li>
+          <li><a href="#verdict">Pricing</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Judicial services coaching, built for aspirants who show up.</span>
+      <span>© 2026 Judiciary Gold</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.15});
+  els.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
